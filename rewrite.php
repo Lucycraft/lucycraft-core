@@ -13,7 +13,7 @@
 
     if ($url = ){
 
-         testing
+         // testing
     }
 
 ?>
