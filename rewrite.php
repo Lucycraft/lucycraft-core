@@ -11,6 +11,9 @@
 
     $url = $_SERVER['REQUEST_URI'];
 
-    if ($url = )
+    if ($url = ){
+
+         // testing
+    }
 
 ?>
