@@ -10,7 +10,7 @@ require_once('../functions/database.php');
 
 function knownPage($url) {
 
-
+    $known = false;
 
 
     $sql = "SELECT * FROM seo_urls WHERE url = "
