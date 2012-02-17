@@ -5,7 +5,9 @@
  *
  *  Written by Boris Wintein & Glenn Latomme.
  *
- * @param $location locatoin of the plugin
+ * TODO description
+ *
+ * @param $location - location of the plugin
  * @return string the result
  */
 function InstallPlugin($location){
