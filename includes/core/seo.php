@@ -12,9 +12,10 @@ function knownPage($url) {
 
     $known = false;
 
+    $request = lucy_db_clean($url);
 
-    $sql = "SELECT * FROM seo_urls WHERE url = ";
-
+    $sql = "SELECT * FROM seo_urls WHERE url = " . $url;
+    $query = lucy_db_query($sql);
 
 
     return $known;
