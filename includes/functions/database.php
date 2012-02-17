@@ -6,48 +6,121 @@
  *  Written by Boris Wintein & Glenn Latomme.
  */
 
+    function lucy_db_connect($server = DB_SERVER, $username = DB_USERNAME, $password = DB_PASSWORD, $database = DB_NAME, $link = 'db_link') {
+        global $$link;
 
-/**
- * This function prepares $data for database input.
- *
- * @param $data
- * @return mixed
- */
-function prepareInput($data) {
+        if (USE_PERSISTENT == 'true') {
+            $$link = mysql_pconnect($server, $username, $password);
+        } else {
+            $$link = mysql_connect($server, $username, $password);
+        }
+
+        if ($$link) {
+            lucy_db_select($database, $$link);
+        } else {
+
+        }
+
+        mysql_set_charset('utf8', $$link);
+
+        return $$link;
+    }
+
+    function lucy_db_close($link) {
+        global $$link;
+
+        return mysql_close($$link);
+    }
+
+    function lucy_db_select($database, $link = 'db_link') {
+        global $$link;
+
+        if (mysql_select_db($database, $$link)) {
+
+            return true;
+        } else {
+
+            lucy_db_error('Selection of the database failed.');
+            return false;
+        }
+    }
+
+    function lucy_db_query($query, $link = 'db_link') {
+        global $$link;
+
+        $result = mysql_query($query, $$link) or lucy_db_error($query);
 
 
-    return $data;
-}
+        return $result;
+    }
+
+    function lucy_db_fetch_array ($resource, $link = 'db_link') {
+
+        return mysql_fetch_array($resource);
+    }
+
+    function lucy_db_find_data($resource, $data) {
+
+        return mysql_data_seek($resource, $data);
+    }
+
+    function lucy_db_num_rows ($resource) {
+        return mysql_num_rows($resource);
+    }
+
+    function lucy_db_insert_id($link = 'db_link') {
+        global $$link;
+
+        return mysql_insert_id($$link);
+    }
+
+    function lucy_db_free_result($db_query) {
+        return mysql_free_result($db_query);
+    }
+
+    function lucy_db_fetch_fields($db_query) {
+        return mysql_fetch_field($db_query);
+    }
+
+    function lucy_db_error ($query) {
+
+        echo 'Auwtch. Something just went wrong.<br />';
+        echo 'Lucy says it happened here: ' . $query;
+        die (mysql_errno() . mysqli_error());
+    }
+
+    function lucy_db_clean($dirtydata, $fromMySQL = 'false') {
+        $cleandata = '';
+
+        if (!$fromMySQL) {
+
+            // Do stuff.
+
+            return $cleandata;
+        } else {
+
+            return $cleandata;
+        }
+    }
+
+    // Lucyforum functions.
 
 
-/**
- * Inverse of prepareInput, this undoes what happened in prepareInput so
- * that $data can be used.
- *
- * @param $data
- * @return mixed
- */
-function cleanOutput($data) {
+    // General Plugin Database Functions
 
+    function lucy_installed_plugins () {
 
-    return $data;
-}
+        $plugins = array();
 
-function lc_db_query($sql) {
+        $query = 'SELECT plugin_name FROM plugins WHERE activated = 1';
+        $resource = lucy_db_query($query);
 
-    return mysql_query($sql);
-}
+        while (($row = lucy_db_fetch_array($resource))) {
 
-function lc_db_array($query) {
+            $plugins[] = $row['plugin_name'];
+        }
 
-    return mysql_fetch_array($query);
-}
-
-
-function connectDB() {
-
-
-
-}
+        return $plugins;
+    }
 
 ?>

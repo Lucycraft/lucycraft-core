@@ -1,9 +1,7 @@
 <?php
 /**
- *  LUCYCRAFT CORE - users.php
+ *  LUCYCRAFT CORE - lucy_bottom.php
  *  http://www.lucycraft.be
  *
  *  Written by Boris Wintein & Glenn Latomme.
  */
-
-    require_once ('plugins/userdatabase.php');
