@@ -4,6 +4,7 @@
  *  http://www.lucycraft.be
  *
  *  Written by Boris Wintein & Glenn Latomme.
+ *
  */
 
     function lucy_mc_plugins () {

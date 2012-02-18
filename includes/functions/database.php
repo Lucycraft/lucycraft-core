@@ -4,8 +4,18 @@
  *  http://www.lucycraft.be
  *
  *  Written by Boris Wintein & Glenn Latomme.
+ *
+ *
+ * Discription:
+ * @TODO description
+ *
+ * @param $server server IP adress
+ * @param $username Username
+ * @param $password Password
+ * @param $database Database name
+ * @param string $link
+ * @return resource
  */
-
     function lucy_db_connect($server = DB_SERVER, $username = DB_USERNAME, $password = DB_PASSWORD, $database = DB_NAME, $link = 'db_link') {
         global $$link;
 
