@@ -7,7 +7,7 @@
  *
  *
  * Discription:
- * TODO description
+ * @TODO description
  *
  * @param $server server IP adress
  * @param $username Username

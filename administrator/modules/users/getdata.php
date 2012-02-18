@@ -13,4 +13,4 @@
 function GetPlayerIGname($playername){
 
 }
-// TODO plugin connection to get information about the player
+// @TODO plugin connection to get information about the player

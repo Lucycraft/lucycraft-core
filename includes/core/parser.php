@@ -6,7 +6,7 @@
  *  Written by Boris Wintein & Glenn Latomme.
  *
  * Discription:
- * TODO description
+ * @TODO description
  *
  * @param $url Input URL
  * @return string real url

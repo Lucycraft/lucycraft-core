@@ -22,9 +22,9 @@ $database = "Database name";
 */
 $link = lucy_db_connect($server, $username, $password, $database);
 
-/* TODO  check if connected
- * TODO  check if tabels exicst
- * TODO  check if values are set
+/* @TODO  check if connected
+ * @TODO  check if tabels exicst
+ * @TODO  check if values are set
 */
 
 /**
