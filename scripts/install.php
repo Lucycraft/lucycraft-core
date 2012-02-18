@@ -5,7 +5,8 @@
  *
  *  Written by Boris Wintein & Glenn Latomme.
  *
- * TODO description
+ * Discription:
+ * Installs a plugin.
  *
  * @param $location - location of the plugin
  * @return string the result

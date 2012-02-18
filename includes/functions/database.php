@@ -5,7 +5,9 @@
  *
  *  Written by Boris Wintein & Glenn Latomme.
  *
- *  TODO description
+ *
+ * Discription:
+ * TODO description
  *
  * @param $server server IP adress
  * @param $username Username
