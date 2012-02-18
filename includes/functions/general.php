@@ -18,7 +18,10 @@
     }
 
 
-    function lucy_error($lucysays) {
+/**
+ * @param $lucysays - The error
+ */
+function lucy_error($lucysays) {
 
         echo 'Auwtch. Something just went wrong.<br />';
         echo 'Lucy says: ' . $lucysays;

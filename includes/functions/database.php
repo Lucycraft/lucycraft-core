@@ -9,12 +9,12 @@
  * Discription:
  * @TODO description
  *
- * @param $server server IP adress
- * @param $username Username
- * @param $password Password
- * @param $database Database name
- * @param string $link
- * @return resource
+ * @param $server - server IP adress
+ * @param $username  - Username
+ * @param $password - Password
+ * @param $database - Database name
+ * @param string $link - Database link
+ * @return resource - Return Database link
  */
     function lucy_db_connect($server = DB_SERVER, $username = DB_USERNAME, $password = DB_PASSWORD, $database = DB_NAME, $link = 'db_link') {
         global $$link;
@@ -36,13 +36,22 @@
         return $$link;
     }
 
-    function lucy_db_close($link) {
+/**
+ * @param $link - DB link
+ * @return bool - If close was succesfull
+ */
+function lucy_db_close($link) {
         global $$link;
 
         return mysql_close($$link);
     }
 
-    function lucy_db_select($database, $link = 'db_link') {
+/**
+ * @param $database - What datbase to select
+ * @param string $link - Database link
+ * @return bool - If selection was succesfull
+ */
+function lucy_db_select($database, $link = 'db_link') {
         global $$link;
 
         if (mysql_select_db($database, $$link)) {
@@ -55,7 +64,12 @@
         }
     }
 
-    function lucy_db_query($query, $link = 'db_link') {
+/**
+ * @param $query - The input querry
+ * @param string $link - Database link
+ * @return resource - The result
+ */
+function lucy_db_query($query, $link = 'db_link') {
         global $$link;
 
         $result = mysql_query($query, $$link) or lucy_db_error($query);
@@ -64,42 +78,76 @@
         return $result;
     }
 
-    function lucy_db_fetch_array ($resource, $link = 'db_link') {
+/**
+ * @param $resource - @TODO What is this?
+ * @param string $link - Database link
+ * @return array - Output array
+ */
+function lucy_db_fetch_array ($resource, $link = 'db_link') {
 
         return mysql_fetch_array($resource);
     }
 
-    function lucy_db_find_data($resource, $data) {
+/**
+ * @param $resource - @TODO What is this?
+ * @param $data - The data to look for
+ * @return bool - If find was succesfull
+ */
+function lucy_db_find_data($resource, $data) {
 
         return mysql_data_seek($resource, $data);
     }
 
-    function lucy_db_num_rows ($resource) {
+/**
+ * @param $resource - @TODO What is this?
+ * @return int - Number of rows
+ */
+function lucy_db_num_rows ($resource) {
         return mysql_num_rows($resource);
     }
 
-    function lucy_db_insert_id($link = 'db_link') {
+/**
+ * @param string $link - Database link
+ * @return int - @TODO What is this?
+ */
+function lucy_db_insert_id($link = 'db_link') {
         global $$link;
 
         return mysql_insert_id($$link);
     }
 
-    function lucy_db_free_result($db_query) {
+/**
+ * @param $db_query - The query
+ * @return bool - if the free_result was succesfull or not
+ */
+function lucy_db_free_result($db_query) {
         return mysql_free_result($db_query);
     }
 
-    function lucy_db_fetch_fields($db_query) {
+/**
+ * @param $db_query - The query
+ * @return object - @TODO What is this?
+ */
+function lucy_db_fetch_fields($db_query) {
         return mysql_fetch_field($db_query);
     }
 
-    function lucy_db_error ($query) {
+/**
+ * @param $query - The error query
+ */
+function lucy_db_error ($query) {
 
         echo 'Auwtch. Something just went wrong.<br />';
         echo 'Lucy says it happened here: ' . $query;
         die (mysql_errno() . mysqli_error());
     }
 
-    function lucy_db_clean($dirtydata, $fromMySQL = 'false') {
+/**
+ * @param $dirtydata - @TODO What is this?
+ * @param string $fromMySQL - If the command is triggerd from mysql.
+ * @return string - Output of the cleandata
+ */
+function lucy_db_clean($dirtydata, $fromMySQL = 'false') {
         $cleandata = '';
 
         if (!$fromMySQL) {
@@ -118,7 +166,10 @@
 
     // General Plugin Database Functions
 
-    function lucy_installed_plugins () {
+/**
+ * @return array - Lists the installed plugins
+ */
+function lucy_installed_plugins () {
 
         $plugins = array();
 

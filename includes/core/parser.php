@@ -8,8 +8,8 @@
  * Discription:
  * @TODO description
  *
- * @param $url Input URL
- * @return string real url
+ * @param $url - Input URL
+ * @return string  - real url
  */
 
 function parseUrl($url) {

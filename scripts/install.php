@@ -5,7 +5,7 @@
  *
  *  Written by Boris Wintein & Glenn Latomme.
  *
- * Discription:
+ * Description:
  * Installs a plugin.
  *
  * @param $location - location of the plugin
@@ -16,7 +16,7 @@ function InstallPlugin($location){
     if (is_dir($location)){
 
     } else {
-        $output = "The given location doesn't exicst";
+        $output = "The given location doesn't exist";
     }
    return $output;
 }

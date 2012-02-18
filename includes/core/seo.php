@@ -8,6 +8,13 @@
 
 require_once('../functions/database.php');
 
+/**
+ * Discription:
+ * Checks if we know the url
+ *
+ * @param $url - The input url
+ * @return bool - If the url is known
+ */
 function knownPage($url) {
 
     $known = false;
