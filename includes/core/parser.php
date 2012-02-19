@@ -4,23 +4,17 @@
  *  http://www.lucycraft.be
  *
  *  Written by Boris Wintein & Glenn Latomme.
- *
- * Discription:
- * @TODO description
- *
- * @param $url Input URL
- * @return string real url
  */
 
 function parseUrl($url) {
 
+    $found = false;
 
-
-
+    $realUrl = 'something we parsed';
 
     if ($found) {
 
-        storeUrl();
+        storeURL($url);
         return $realUrl;
     } else {
 
@@ -29,7 +23,7 @@ function parseUrl($url) {
 }
 
 
-function storeUrl() {
+function storeURL($url) {
 
 
 

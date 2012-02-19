@@ -5,18 +5,7 @@
  *
  *  Written by Boris Wintein & Glenn Latomme.
  *
- * Discription:
- * Installs a plugin.
- *
- * @param $location - location of the plugin
- * @return string the result
  */
-function InstallPlugin($location){
-    $output = "";
-    if (is_dir($location)){
 
-    } else {
-        $output = "The given location doesn't exicst";
-    }
-   return $output;
-}
+// This is the installation wizard for the cms. This sets up include folders, configs, and whatnot. Since some people
+// aren't tech-savy enough to manually change config files.

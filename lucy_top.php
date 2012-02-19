@@ -39,3 +39,23 @@ if (!file_exists ($whereami . '/includes/config.php')) {
 
         include ('includes/functions/plugins/ecodatabase.php');
     }
+
+    // Checks for plugins like jobs mcMMO etc.
+    $query = "SELECT plugin_name, plugin_folder FROM plugins WHERE plugin_type = jobs";
+    $resource = lucy_db_query($query);
+    $jobs = lucy_db_num_rows($resource);
+
+    if ($jobs) {
+
+        include ('includes/functions/plugins/jobsdatabase.php');
+    }
+
+    // Check for plugins like towny, factions, ...
+    $query = "SELECT plugin_name, plugin_folder FROM plugins WHERE plugin_type = nations";
+    $resource = lucy_db_query($query);
+    $nations = lucy_db_num_rows($resource);
+
+    if ($nations) {
+
+        include ('includes/functions/plugins/nationsdatabase.php');
+    }
