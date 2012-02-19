@@ -15,3 +15,12 @@
  * just turns in a CMS/Blog with useless modules. It will not break but gracefully tell you that you should
  * really use plugins. It's just more awesome.
  */
+
+include_once ('lucy_top.php');
+
+// STUFF HAPPENS HERE :D
+
+
+include_once('lucy_bottom.php');
+
+
