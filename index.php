@@ -40,7 +40,7 @@
 
 		<h3>Random Subtitle 3</h3>
 		<p>
-			me? ow nice <a href="#">read more ...</a>
+			Testing some stuff<a href="#">read more ...</a>
 		</p>
 
 		<!-- Footer -->
