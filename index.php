@@ -21,7 +21,7 @@
 		<meta charset="utf-8" />
 	</head>
 		<body>
-		<h1><a href="#">hostfrogs</a></h1>
+		<h1><a href="#">Lucycraft</a></h1>
 		<!-- Header -->
 		<?php
 			include_once ('lucy_top.php');
