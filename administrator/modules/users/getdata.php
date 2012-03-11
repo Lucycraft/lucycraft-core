@@ -48,30 +48,22 @@ switch ($view) {
 
     break;
 }
-/*
- *  Gives a list of ...
- */
+
 function show_list() {
 
 
 }
-/**
- * @param $id - ID for the user to focus on
- */
+
 function show_user($id) {
 
 
 }
-/**
- * @param $id - ID for the user to edit
- */
+
 function edit_user($id) {
 
 
 }
-/**
- * @param $id - ID for the user to delete
- */
+
 function delete_user($id) {
 
 

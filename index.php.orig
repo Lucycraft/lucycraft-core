@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php
 /**
  * LUCYCRAFT-CORE
  *
@@ -15,13 +15,14 @@
  * just turns in a CMS/Blog with useless modules. It will not break but gracefully tell you that you should
  * really use plugins. It's just more awesome.
  */
+<<<<<<< HEAD
 <html lang="en"> 
 	<head>
 		<title>Lucycraft</title>
 		<meta charset="utf-8" />
 	</head>
 		<body>
-		<h1><a href="#">hostfrogs</a></h1>
+		<h1><a href="#">Lucycraft</a></h1>
 		<!-- Header -->
 		<?php
 			include_once ('lucy_top.php');
@@ -32,20 +33,14 @@
 		<p>
 			Meh <a href="#">read more ...</a>
 		</p>
+=======
+>>>>>>> parent of b03ae37... Just testing some stufff
 
-		<h3>Random Subtitle 2</h3>
-		<p>
-			What are you looking at? <a href="#">read more ...</a>
-		</p>
+include_once ('lucy_top.php');
 
-		<h3>Random Subtitle 3</h3>
-		<p>
-			me? ow nice <a href="#">read more ...</a>
-		</p>
+// STUFF HAPPENS HERE :D
 
-		<!-- Footer -->
-		<?php
-			include_once('lucy_bottom.php');
-		?>
-	</body>
-</html>
+
+include_once('lucy_bottom.php');
+
+
